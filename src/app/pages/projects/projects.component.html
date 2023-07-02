@@ -1,0 +1,13 @@
+<div class='loader-spin' *ngIf="this.loader.getLoading()">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!this.loader.getLoading()">
+    <p>projects works!</p>
+    <h1>Activity to do</h1>
+    <h2>{{data.activity}}</h2>
+    <h1>Participants</h1>
+    <h2>{{data.participants}}</h2>
+    <h1>Type</h1>
+    <h2>{{data.type}}</h2>
+</div>
