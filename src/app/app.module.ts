@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -10,12 +9,18 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { SocialMediaComponent } from './components/social-media/social-media.component';
 import { AboutThisComponent } from './pages/about-this/about-this.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingSpinnerInterceptor } from './interceptor/loading-spinner.interceptor';
+import { SizeDirective } from './directives/animations/size.directive';
+import { ColorDirective } from './directives/animations/color.directive';
+import { RotationDirective } from './directives/animations/rotation.directive';
+import { TranslationDirective } from './directives/animations/translation.directive';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +32,20 @@ import { LoadingSpinnerInterceptor } from './interceptor/loading-spinner.interce
     AboutMeComponent,
     ProjectsComponent,
     NotFoundComponent,
+    SizeDirective,
+    ColorDirective,
+    RotationDirective,
+    TranslationDirective,
+    FooterComponent,
+    ProjectCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    MatCardModule,
     HttpClientModule,
   ],
   providers: [

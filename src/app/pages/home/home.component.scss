@@ -1,0 +1,54 @@
+.background-image {
+  position: absolute;
+  height: -webkit-fill-available;
+  width: auto;
+  opacity: 0.2;
+  background-size: cover;
+  top: 4vw;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+.buttons-container {
+  display: flex;
+}
+
+.home-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+  color: cornflowerblue;
+  font-weight: bold;
+}
+
+.home-name {
+  font-size: 5vw;
+  text-align: center;
+}
+
+.home-intro {
+  font-size: 3vw;
+  text-align: center;
+}
+
+.home-description {
+  font-size: 2vw;
+  color: cornflowerblue;
+}
+
+.toggle-button {
+  background-color: pink;
+  color: white;
+  display: flex;
+  font-size: 1.3vw;
+  width: 11vw;
+  height: 4vw;
+}
+
+.opacity-1 {
+  opacity: 1;
+}

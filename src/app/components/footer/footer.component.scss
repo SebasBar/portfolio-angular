@@ -1,0 +1,22 @@
+.mat-toolbar {
+  background-color: cornflowerblue;
+  font-size: 1vw;
+  font-weight: bold;
+  gap: 1.5vw;
+  height: 3vw;
+  min-height: 2vw;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.3vw;
+  align-items: center;
+}
+
+a {
+  color: pink;
+}

@@ -1,1 +1,32 @@
-<p>home works!</p>
+<div>
+    <img src="../../../assets/zelda-home-background.jpg"
+        class='background-image'
+        alt="homepage background image of zelda game">
+    <div class="buttons-container">
+        <button mat-raised-button
+            class='toggle-button v-margin h-margin'
+            (click)="toggleAnimate()">{{animate ? "Un-animate" : 'Animate'}}</button>
+        <button mat-raised-button
+            class='toggle-button v-margin h-margin'
+            (click)="toggleColor()">{{changeColor ? "Reset colors" : 'Random colors'}}</button>
+    </div>
+    <div class='center-all home-text opacity-1'>
+        <div [randomColor]='changeColor'
+            [randomSize]="animate"
+            class='home-intro'>Welcome to my Website!</div>
+        <div [randomColor]='changeColor'
+            [randomRotation]="animate"
+            class='home-intro'>My name is <span class='home-name'
+                [randomColor]="changeColor"
+                [randomColor]='true'>Sebastian Barckhahn</span></div>
+        <div [randomColor]='changeColor'
+            [randomTranslation]="animate"
+            class='home-intro'>and I am a Web Developer</div>
+        <div class='v-spacer'></div>
+        <div class='home-description'
+            [randomColor]='changeColor'
+            [randomTranslation]="animate">This is a fullstack website made in Angular, Node and MongoDB.</div>
+
+    </div>
+
+</div>

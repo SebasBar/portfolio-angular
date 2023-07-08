@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Activity } from '../types/types';
+import { ProjectaAPIResponse } from '../types/types';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +12,9 @@ export class ApiCallService {
 
   constructor(private http: HttpClient) {}
 
-  fetchData(): Observable<Activity> {
-    return this.http.get<Activity>(this.url).pipe(
+  fetchData(url?: string): Observable<ProjectaAPIResponse> {
+    // setTimeout(() => {}, 1000);
+    return this.http.get<ProjectaAPIResponse>(url || this.url).pipe(
       tap((data) => JSON.stringify(data)),
       catchError(this.handleError)
     );

@@ -1,6 +1,15 @@
-.loader-spin {
+.project-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80%;
+}
+
+.loader-spin {
+  height: 50%;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5vw;
+  margin: 5vw;
 }

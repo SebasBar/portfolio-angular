@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCallService } from 'src/app/services/api-call.service';
 import { LoaderService } from 'src/app/services/loader.service';
-import { Activity } from 'src/app/types/types';
+// import { Projects } from 'src/app/types/types';
 
 @Component({
   selector: 'app-projects',
@@ -14,15 +14,19 @@ export class ProjectsComponent implements OnInit {
     public loader: LoaderService
   ) {}
 
-  data: Activity = {};
+  projects: any;
 
   ngOnInit(): void {
-    this.apiCallService.fetchData().subscribe(
-      (activity) => {
-        this.data = activity;
-        console.log('activity', activity);
-      },
-      (error) => console.log(error)
-    );
+    // setTimeout(() => {
+    this.apiCallService
+      .fetchData('http://localhost:3001/api/projects')
+      .subscribe(
+        (projects) => {
+          this.projects = projects.data;
+          console.log('projects', projects.data);
+        },
+        (error) => console.log(error)
+      );
+    // }, 1000);
   }
 }
