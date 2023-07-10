@@ -17,7 +17,6 @@ export class ProjectsComponent implements OnInit {
   projects: any;
 
   ngOnInit(): void {
-    // setTimeout(() => {
     this.apiCallService
       .fetchData('http://localhost:3001/api/projects')
       .subscribe(
@@ -27,6 +26,5 @@ export class ProjectsComponent implements OnInit {
         },
         (error) => console.log(error)
       );
-    // }, 1000);
   }
 }

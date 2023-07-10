@@ -1,6 +1,14 @@
 <mat-card class='project-card-container'>
-    <mat-card-header>
-        {{project?.name}}
+    <mat-card-header class='header-container'>
+        <img mat-card-avatar
+            src='../../../assets/images/Projects/CellularAutomata/CellularAutomata.png'
+            alt='this is a project image' />
+        <mat-card-title>{{project?.name}}</mat-card-title>
+        <mat-card-subtitle class='tech-lang-text'>
+            <div *ngFor="let tech_lang of project?.tech_lang">
+                <p title='{{tech_lang?.description}}'>{{tech_lang?.name}}</p>
+            </div>
+        </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <p>{{project?.description}}</p>
@@ -9,9 +17,6 @@
         <p>{{project?.deployed_link}}</p>
         <p>{{project?.github_link}}</p>
 
-        <div *ngFor="let picture of project?.pictures">
-            <p>{{picture}}</p>
-        </div>
         <div *ngFor="let client of project?.clients">
             <p>{{client?.name}}</p>
             <p>{{client?.description}}</p>
@@ -22,9 +27,5 @@
             <p>{{teammate?.github_link}}</p>
         </div>
 
-        <div *ngFor="let tech_lang of project?.tech_lang">
-            <p>{{tech_lang?.name}}</p>
-            <p>{{tech_lang?.description}}</p>
-        </div>
     </mat-card-content>
 </mat-card>

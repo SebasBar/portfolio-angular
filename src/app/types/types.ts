@@ -1,13 +1,3 @@
-export interface Activity {
-  activity?: string;
-  type?: string;
-  participants?: number;
-  price?: number;
-  link?: string;
-  key?: string;
-  accessibility?: number;
-}
-
 export interface Project {
   _id: any;
   name: string;
@@ -16,7 +6,7 @@ export interface Project {
   description3?: string;
   github_link?: string;
   deployed_link?: string;
-  pictures?: string[];
+  pictures?: string;
   tech_lang: [
     {
       name: string;
@@ -38,6 +28,6 @@ export interface Project {
 }
 
 export interface ProjectaAPIResponse {
-  data: [Project];
+  data: Project[];
   status: string;
 }

@@ -1,8 +1,23 @@
 .project-card-container {
   max-width: 400px;
+  z-index: -1;
+  background-color: antiquewhite;
 }
 
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
+.tech-lang-text {
+  display: flex;
+  font-size: small;
+  gap: 4px;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mat-mdc-card-header-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

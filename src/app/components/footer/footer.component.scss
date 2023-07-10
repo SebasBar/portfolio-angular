@@ -1,11 +1,11 @@
 .mat-toolbar {
   background-color: cornflowerblue;
-  font-size: 1vw;
-  font-weight: bold;
+  font-size: calc(5px + 0.7vw);
+  font-weight: 700s;
   gap: 1.5vw;
   height: 3vw;
   min-height: 2vw;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   justify-content: space-between;
@@ -19,4 +19,5 @@
 
 a {
   color: pink;
+  font-weight: bold;
 }
