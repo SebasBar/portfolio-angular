@@ -1,31 +1,41 @@
 <mat-card class='project-card-container'>
     <mat-card-header class='header-container'>
         <img mat-card-avatar
-            src='../../../assets/images/Projects/CellularAutomata/CellularAutomata.png'
-            alt='this is a project image' />
-        <mat-card-title>{{project?.name}}</mat-card-title>
+            src='{{project.pictures}}'
+            alt='{{project.description}}' />
+        <mat-card-title>{{project.name}}</mat-card-title>
         <mat-card-subtitle class='tech-lang-text'>
             <div *ngFor="let tech_lang of project?.tech_lang">
                 <p title='{{tech_lang?.description}}'>{{tech_lang?.name}}</p>
             </div>
         </mat-card-subtitle>
     </mat-card-header>
+
+    <img mat-card-image
+        class='card-image'
+        src="{{project.pictures}}"
+        alt="{{project.description}}">
+
     <mat-card-content>
-        <p>{{project?.description}}</p>
-        <p>{{project?.description2}}</p>
-        <p>{{project?.description3}}</p>
-        <p>{{project?.deployed_link}}</p>
-        <p>{{project?.github_link}}</p>
+        <p>{{project.description}}</p>
+        <p>{{project .description2}}</p>
+        <p>{{project.description3}}</p>
+        <p>{{project.deployed_link}}</p>
+        <p>{{project.github_link}}</p>
 
-        <div *ngFor="let client of project?.clients">
-            <p>{{client?.name}}</p>
-            <p>{{client?.description}}</p>
+        <div *ngIf="project.clients[0]?.name">Clients of the project:
+            <div *ngFor="let client of project?.clients">
+                <p>{{client?.name}}</p>
+                <p>{{client?.description}}</p>
+            </div>
         </div>
 
-        <div *ngFor="let teammate of project?.teammates">
-            <p>{{teammate?.name}}</p>
-            <p>{{teammate?.github_link}}</p>
+        <div *ngIf="project.teammates[0]?.name">Teammates:
+            <div *ngFor="let teammate of project?.teammates">
+                <p>{{teammate?.name}}</p>
+                <p>{{teammate?.github_link}}</p>
+            </div>
         </div>
-
     </mat-card-content>
+
 </mat-card>

@@ -1,5 +1,6 @@
-import { Project } from './../../types/types';
 import { Component, Input } from '@angular/core';
+import { Project } from './../../types/types';
+import { emptyProject } from 'src/app/types/constants';
 
 @Component({
   selector: 'app-project-card',
@@ -7,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./project-card.component.scss'],
 })
 export class ProjectCardComponent {
-  @Input() project: Project | undefined;
+  @Input() project: Project = emptyProject;
 }

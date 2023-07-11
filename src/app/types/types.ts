@@ -13,13 +13,13 @@ export interface Project {
       description: string;
     }
   ];
-  clients?: [
+  clients: [
     {
       name: string;
       description: string;
     }
   ];
-  teammates?: [
+  teammates: [
     {
       name: string;
       github_link: string;

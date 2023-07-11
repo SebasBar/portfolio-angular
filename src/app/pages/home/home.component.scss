@@ -1,7 +1,7 @@
 .background-image {
   position: absolute;
-  height: -webkit-fill-available;
-  width: auto;
+  height: 100%;
+  width: 100%;
   opacity: 0.2;
   background-size: cover;
   top: 4vw;
@@ -30,17 +30,14 @@
 }
 
 .home-name {
-  // font-size: 4vw;
   font-size: calc(10px + 3vw);
 }
 
 .home-intro {
-  // font-size: 2.5vw;
   font-size: calc(10px + 2vw);
 }
 
 .home-description {
-  // font-size: 2.5vw;
   font-size: calc(10px + 2vw);
 }
 
@@ -48,7 +45,6 @@
   background-color: pink;
   color: white;
   display: flex;
-  // font-size: 1.1vw;
   font-size: calc(8px + 0.6vw);
   font-weight: bold;
   width: auto;
