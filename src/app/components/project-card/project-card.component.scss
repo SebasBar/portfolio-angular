@@ -1,13 +1,16 @@
 .project-card-container {
   width: 380px;
-  z-index: -1;
-  background-color: pink;
+  height: 600px;
+  background-color: rgb(178, 245, 210);
+  border-radius: 15px;
 }
 
-.tech-lang-text {
+.sub-text {
   display: flex;
   font-size: small;
   gap: 4px;
+  align-items: center;
+  color: rgb(37, 20, 56);
 }
 
 .header-container {
@@ -25,6 +28,12 @@
 .card-image {
   margin: 10px;
   height: 250px;
-  border-radius: 4px;
-  border-color: aqua;
+  width: auto;
+  border-radius: 18px;
+}
+
+.mat-tooltip-container {
+  font-family: 'Lora', serif;
+  color: black;
+  background-color: yellow;
 }

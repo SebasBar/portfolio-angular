@@ -9,4 +9,5 @@ import { emptyProject } from 'src/app/types/constants';
 })
 export class ProjectCardComponent {
   @Input() project: Project = emptyProject;
+  panelOpenState = false;
 }

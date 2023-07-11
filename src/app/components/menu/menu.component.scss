@@ -1,6 +1,5 @@
 .mat-toolbar {
   background-color: cornflowerblue;
-  // font-size: 1.5vw;
   font-size: calc(9px + 0.8vw);
   font-weight: 600;
   gap: 1.5vw;
@@ -8,4 +7,5 @@
   min-height: 2vw;
   position: fixed;
   top: 0;
+  z-index: 2;
 }
