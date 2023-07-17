@@ -2,14 +2,19 @@
     <mat-card-header class='header-container'>
         <img mat-card-avatar
             src='{{project.pictures}}'
-            alt='{{project.description}}' />
+            alt='{{project.description}}'
+            class='avatar-container' />
         <mat-card-title>{{project.name}}</mat-card-title>
-        <mat-card-subtitle class='sub-text'>
+        <mat-card-subtitle class='sub-title-container'>
             <div class='sub-text'
                 *ngFor="let tech_lang of project?.tech_lang; let i = index">
-                <p matTooltip="{{tech_lang?.description}}"
-                    matTooltipClass='mat-tooltip-container'>{{tech_lang?.name}}</p>
-                <p *ngIf="i < project.tech_lang.length - 1">/</p>
+                <p class='sub-text'
+                    matTooltip="{{tech_lang?.description}}">
+                    <!--TODO: matTooltipClass='mat-tooltip-container' -->
+                    {{tech_lang?.name}}
+                </p>
+                <p class='sub-text'
+                    *ngIf="project.tech_lang && i < project.tech_lang.length - 1">/ </p>
             </div>
         </mat-card-subtitle>
     </mat-card-header>
@@ -19,33 +24,55 @@
         src="{{project.pictures}}"
         alt="{{project.description}}">
 
-    <mat-card-content>
-        <p matTooltip="{{project .description2}}  {{project.description3}}"
-            matTooltipClass='mat-tooltip-container'>{{project.description}}</p>
-        <div class='sub-text'>
-            <a *ngIf="!!project.deployed_link"
+    <!-- CONTENT -->
+    <mat-card-content class='card-content'>
+        <p class='project-description'
+            matTooltip="{{project .description2}}  {{project.description3}}">
+            <!-- TODO: matTooltipClass='mat-tooltip-container'   get class for tooltip and change style -->
+            {{project.description}}
+        </p>
+
+        <!-- LINKS -->
+        <div class='resources-container'
+            *ngIf="project.deployed_link || project.github_link">
+            <p class='sub-text'><strong>Project links: </strong></p>
+            <a class='links'
+                *ngIf="project.deployed_link"
                 href='{{project.deployed_link}}'>Deployed project</a>
-            <a *ngIf="!!project.github_link"
+            <p class='links'
+                *ngIf="project.deployed_link && project.github_link">/</p>
+            <a class='links'
+                *ngIf="project.github_link"
                 href='{{project.github_link}}'>GitHub Repo</a>
         </div>
-        <div class='sub-text'
-            *ngIf="project.clients[0]?.name">Clients of the project:
+
+        <!-- TEAMMATES -->
+        <div class='resources-container'
+            *ngIf="project.teammates && project.teammates.length > 0">
+            <div class='sub-text'>
+                <strong>Teammates (links): </strong>
+            </div>
             <div class='sub-text'
-                *ngFor="let client of project?.clients; let i = index">
-                <p>{{client?.name}}</p>
-                <p *ngIf="i < project.clients.length - 1">/</p>
-                <!-- <p>{{client?.description}}</p> -->
+                *ngFor="let teammate of project.teammates; let i = index">
+                <a class='links'
+                    href="{{teammate.github_link}}"> {{teammate?.name}}</a>
+                <p class='links'
+                    *ngIf="project.teammates &&  i < project.teammates.length - 1">/</p>
             </div>
         </div>
 
-        <div class='sub-text'
-            *ngIf="project.teammates[0]?.name">Teammates:
-            <div class='sub-text'
-                *ngFor="let teammate of project?.teammates; let i = index">
-                <a href="{{teammate.github_link}}"> {{teammate?.name}}</a>
-                <p *ngIf="i < project.teammates.length - 1">/</p>
+        <!-- CLIENTS -->
+        <div class="resources-container"
+            *ngIf="project.clients && project.clients.length > 0">
+            <div class='sub-text'>
+                <strong>Project clients: </strong>
+            </div>
+            <div *ngFor="let client of project.clients; let i = index">
+                <p class='sub-text'>{{client?.name}}</p>
+                <p class='sub-text'
+                    *ngIf="project.clients && i < project.clients.length - 1">/</p>
             </div>
         </div>
+
     </mat-card-content>
-
 </mat-card>

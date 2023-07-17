@@ -6,25 +6,21 @@ export interface Project {
   description3?: string;
   github_link?: string;
   deployed_link?: string;
-  pictures?: string;
-  tech_lang: [
-    {
-      name: string;
-      description: string;
-    }
-  ];
-  clients: [
-    {
-      name: string;
-      description: string;
-    }
-  ];
-  teammates: [
-    {
-      name: string;
-      github_link: string;
-    }
-  ];
+  pictures: string;
+  tech_lang?: projectInfo[];
+  clients?: projectInfo[];
+  teammates?: projectLink[];
+  __v?: number;
+}
+
+export interface projectInfo {
+  name: string;
+  description: string;
+}
+
+export interface projectLink {
+  name: string;
+  github_link: string;
 }
 
 export interface ProjectaAPIResponse {

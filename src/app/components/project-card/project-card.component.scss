@@ -5,10 +5,17 @@
   border-radius: 15px;
 }
 
+.sub-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  height: 20px;
+}
+
 .sub-text {
   display: flex;
   font-size: small;
-  gap: 4px;
   align-items: center;
   color: rgb(37, 20, 56);
 }
@@ -25,6 +32,12 @@
   align-items: center;
 }
 
+.avatar-container {
+  display: flex;
+  align-items: center;
+  margin: 0; // existing class has marging bottom .mat-mdc-card-avatar
+}
+
 .card-image {
   margin: 10px;
   height: 250px;
@@ -32,8 +45,37 @@
   border-radius: 18px;
 }
 
-.mat-tooltip-container {
-  font-family: 'Lora', serif;
-  color: black;
-  background-color: yellow;
+.links {
+  display: flex;
+  font-size: small;
+  gap: 4px;
+  align-items: center;
+  color: orange;
+  font-weight: bold;
 }
+
+.resources-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.project-description {
+  text-align: justify;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 4px;
+  height: 250px;
+}
+
+// TODO: change tooltip style
+// .mat-tooltip-container {
+//   font-family: 'Lora', serif;
+//   color: black;
+//   background-color: yellow;
+// }

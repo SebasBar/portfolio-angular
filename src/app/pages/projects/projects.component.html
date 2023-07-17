@@ -1,12 +1,12 @@
-<div class="projects-container">
-    <div *ngIf="this.loader.getLoading()"
-        class='loader-spiner center-all'>
-        <mat-spinner></mat-spinner>
-    </div>
+<div *ngIf="this.loader.getLoading()"
+    class='loader-spiner center-all'>
+    <mat-spinner></mat-spinner>
+</div>
 
+<div class="projects-container">
     <div *ngIf="!this.loader.getLoading()">
         <div class="projects-page-title">
-            My Web Developer side projects!
+            My Web Developer projects!
         </div>
         <div class="project-cards-container">
             <div *ngFor="let project of projects">

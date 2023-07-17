@@ -16,13 +16,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { LoadingSpinnerInterceptor } from './interceptor/loading-spinner.interceptor';
+import { LoadingSpinnerInterceptor } from './interceptors/loading-spinner.interceptor';
 import { SizeDirective } from './directives/animations/size.directive';
 import { ColorDirective } from './directives/animations/color.directive';
 import { RotationDirective } from './directives/animations/rotation.directive';
 import { TranslationDirective } from './directives/animations/translation.directive';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
+import { ErrorCatchingInterceptor } from './interceptors/error-catching.interceptor';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,11 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingSpinnerInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorCatchingInterceptor,
       multi: true,
     },
   ],
