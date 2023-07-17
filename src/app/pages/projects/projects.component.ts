@@ -17,14 +17,12 @@ export class ProjectsComponent implements OnInit {
   projects: any;
 
   ngOnInit(): void {
-    this.apiCallService
-      .fetchData('http://localhost:3001/api/projects')
-      .subscribe(
-        (projects) => {
-          this.projects = projects.data;
-          console.log('projects', projects.data);
-        },
-        (error) => console.log(error)
-      );
+    this.apiCallService.fetchData('api/projects').subscribe(
+      (projects) => {
+        this.projects = projects.data;
+        console.log('projects', projects.data);
+      },
+      (error) => console.log(error)
+    );
   }
 }
